@@ -1,1 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Soham Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Poppins;
+background:#0b0f1a;
+color:white;
+-webkit-font-smoothing:antialiased;
+}
+
+/* HERO */
+.hero{
+padding:80px 20px 50px;
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+.hero h1{
+font-size:38px;
+font-weight:700;
+letter-spacing:-0.5px;
+}
+
+.highlight{
+background:linear-gradient(45deg,#6c5cff,#00c6ff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+margin-top:12px;
+opacity:0.7;
+font-size:15px;
+}
+
+/* CTA */
+.cta{
+margin-top:22px;
+padding:14px 32px;
+border-radius:40px;
+background:linear-gradient(45deg,#ff4d4d,#ff2d2d);
+color:white;
+text-decoration:none;
+display:inline-block;
+font-weight:500;
+transition:0.25s;
+box-shadow:0 8px 20px rgba(255,77,77,0.3);
+}
+
+.cta:hover{
+transform:translateY(-2px);
+box-shadow:0 12px 30px rgba(255,77,77,0.5);
+}
+
+/* SECTION */
+.section{
+padding:55px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+}
+
+/* CARD */
+.card{
+background:linear-gradient(145deg,#121826,#0f1420);
+border-radius:18px;
+padding:12px;
+transition:0.25s;
+position:relative;
+overflow:hidden;
+}
+
+/* HOVER */
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 30px rgba(0,0,0,0.5),
+0 0 18px rgba(108,92,255,0.35);
+}
+
+/* TAP */
+.card:active{
+transform:scale(0.96);
+}
+
+/* IMAGE */
+.compare{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:6px;
+}
+
+.compare img{
+width:100%;
+border-radius:10px;
+}
+
+/* TEXT */
+.label{
+font-size:11px;
+opacity:0.55;
+text-align:center;
+margin-top:2px;
+}
+
+.result{
+margin-top:8px;
+font-size:14px;
+color:#00c6ff;
+text-align:center;
+font-weight:500;
+}
+
+/* REVIEW */
+.review{
+background:rgba(255,255,255,0.04);
+padding:16px;
+border-radius:12px;
+margin-bottom:12px;
+font-size:14px;
+transition:0.2s;
+}
+
+.review:hover{
+transform:translateY(-3px);
+background:rgba(255,255,255,0.06);
+}
+
+/* TRUST */
+.trust{
+text-align:center;
+padding:35px 20px;
+opacity:0.9;
+}
+
+.badge{
+display:inline-block;
+background:#121826;
+padding:8px 16px;
+border-radius:25px;
+margin:6px;
+font-size:13px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px;
+opacity:0.5;
+font-size:13px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{font-size:26px;}
+.compare{grid-template-columns:1fr;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<h1>High CTR <span class="highlight">Thumbnail Design</span></h1>
+<p>Designed to increase clicks. Proven by results.</p>
+<a href="https://wa.me/919083946648" class="cta">Get Free Sample</a>
+</section>
+
+<!-- WORK -->
+<section class="section">
+<div class="grid">
+
+<!-- 10 CARDS -->
+
+<div class="card">
+<div class="compare">
+<div><img src="images/before1.jpg"><div class="label">Before</div></div>
+<div><img src="images/thumb1.jpg"><div class="label">After</div></div>
+</div>
+<div class="result">2K → 25K 🚀</div>
+</div>
+
+<div class="card">
+<div class="compare">
+<div><img src="images/before2.jpg"><div class="label">Before</div></div>
+<div><img src="images/thumb2.jpg"><div class="label">After</div></div>
+</div>
+<div class="result">5K → 40K 🔥</div>
+</div>
+
+<div class="card">
+<div class="compare">
+<div><img src="images/before3.jpg"><div class="label">Before</div></div>
+<div><img src="images/thumb3.jpg"><div class="label">After</div></div>
+</div>
+<div class="result">1K → 18K 🚀</div>
+</div>
+
+<!-- duplicate -->
+<div class="card"><div class="compare"><div><img src="images/before1.jpg"></div><div><img src="images/thumb1.jpg"></div></div><div class="result">2K → 25K</div></div>
+<div class="card"><div class="compare"><div><img src="images/before2.jpg"></div><div><img src="images/thumb2.jpg"></div></div><div class="result">5K → 40K</div></div>
+<div class="card"><div class="compare"><div><img src="images/before3.jpg"></div><div><img src="images/thumb3.jpg"></div></div><div class="result">1K → 18K</div></div>
+<div class="card"><div class="compare"><div><img src="images/before1.jpg"></div><div><img src="images/thumb1.jpg"></div></div><div class="result">2K → 25K</div></div>
+<div class="card"><div class="compare"><div><img src="images/before2.jpg"></div><div><img src="images/thumb2.jpg"></div></div><div class="result">5K → 40K</div></div>
+<div class="card"><div class="compare"><div><img src="images/before3.jpg"></div><div><img src="images/thumb3.jpg"></div></div><div class="result">1K → 18K</div></div>
+<div class="card"><div class="compare"><div><img src="images/before1.jpg"></div><div><img src="images/thumb1.jpg"></div></div><div class="result">2K → 25K</div></div>
+
+</div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section">
+<div class="review">★★★★★ CTR increased instantly 🔥</div>
+<div class="review">★★★★★ Clean and professional</div>
+<div class="review">★★★★★ Highly recommended</div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+<div class="badge">⚡ Fast Delivery</div>
+<div class="badge">🎯 High CTR Focus</div>
+<div class="badge">💬 Free Sample</div>
+</section>
+
+<footer>
+Made with ❤️ by Soham ★
+</footer>
+
+</body>
+</html>
