@@ -10,13 +10,19 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;}
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+-webkit-tap-highlight-color: transparent; /* REMOVE BLUE TAP */
+}
 
 body{
 font-family:Poppins;
 background:#0b0f1a;
 color:white;
--webkit-font-smoothing:antialiased;
+overflow-x:hidden;
 }
 
 /* HERO */
@@ -25,12 +31,11 @@ padding:80px 20px 50px;
 text-align:center;
 max-width:900px;
 margin:auto;
+animation:fadeUp 1s ease;
 }
 
 .hero h1{
 font-size:38px;
-font-weight:700;
-letter-spacing:-0.5px;
 }
 
 .highlight{
@@ -40,35 +45,42 @@ color:transparent;
 }
 
 .hero p{
-margin-top:12px;
+margin-top:10px;
 opacity:0.7;
-font-size:15px;
 }
 
-/* CTA */
 .cta{
-margin-top:22px;
-padding:14px 32px;
+margin-top:20px;
+padding:14px 30px;
 border-radius:40px;
 background:linear-gradient(45deg,#ff4d4d,#ff2d2d);
 color:white;
 text-decoration:none;
 display:inline-block;
-font-weight:500;
-transition:0.25s;
-box-shadow:0 8px 20px rgba(255,77,77,0.3);
+transition:0.3s;
 }
 
 .cta:hover{
 transform:translateY(-2px);
-box-shadow:0 12px 30px rgba(255,77,77,0.5);
+box-shadow:0 10px 25px rgba(255,0,0,0.4);
 }
 
 /* SECTION */
 .section{
-padding:55px 20px;
+padding:60px 20px;
 max-width:1100px;
 margin:auto;
+}
+
+.section-title{
+text-align:center;
+font-size:26px;
+}
+
+.section-sub{
+text-align:center;
+opacity:0.6;
+margin-bottom:30px;
 }
 
 /* GRID */
@@ -80,74 +92,77 @@ gap:22px;
 
 /* CARD */
 .card{
-background:linear-gradient(145deg,#121826,#0f1420);
+background:#121826;
 border-radius:18px;
-padding:12px;
-transition:0.25s;
-position:relative;
 overflow:hidden;
+transition:0.3s;
+cursor:pointer;
+position:relative;
+user-select:none;
 }
 
-/* HOVER */
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 30px rgba(0,0,0,0.5),
-0 0 18px rgba(108,92,255,0.35);
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 40px rgba(0,0,0,0.7),
+0 0 30px rgba(108,92,255,0.5);
 }
 
-/* TAP */
+/* TAP ANIMATION */
 .card:active{
-transform:scale(0.96);
+transform:scale(0.95);
 }
 
 /* IMAGE */
-.compare{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:6px;
+.card img{
+width:100%;
+display:block;
+transition:0.4s;
 }
 
-.compare img{
-width:100%;
-border-radius:10px;
+.card:hover img{
+transform:scale(1.08);
+}
+
+/* GLOW EFFECT */
+.card::before{
+content:"";
+position:absolute;
+inset:0;
+border-radius:18px;
+background:linear-gradient(120deg,transparent,#6c5cff,transparent);
+opacity:0;
+transition:0.3s;
+}
+
+.card:hover::before{
+opacity:0.25;
 }
 
 /* TEXT */
-.label{
-font-size:11px;
-opacity:0.55;
-text-align:center;
-margin-top:2px;
-}
-
 .result{
-margin-top:8px;
-font-size:14px;
-color:#00c6ff;
+padding:12px;
 text-align:center;
-font-weight:500;
+color:#00c6ff;
 }
 
-/* REVIEW */
+/* CTA CENTER */
+.center-cta{
+text-align:center;
+margin-top:40px;
+}
+
+/* REVIEWS */
 .review{
-background:rgba(255,255,255,0.04);
-padding:16px;
+background:#121826;
+padding:14px;
 border-radius:12px;
-margin-bottom:12px;
-font-size:14px;
-transition:0.2s;
-}
-
-.review:hover{
-transform:translateY(-3px);
-background:rgba(255,255,255,0.06);
+margin-bottom:10px;
 }
 
 /* TRUST */
 .trust{
 text-align:center;
-padding:35px 20px;
-opacity:0.9;
+padding:30px;
 }
 
 .badge{
@@ -156,7 +171,6 @@ background:#121826;
 padding:8px 16px;
 border-radius:25px;
 margin:6px;
-font-size:13px;
 }
 
 /* FOOTER */
@@ -164,13 +178,40 @@ footer{
 text-align:center;
 padding:25px;
 opacity:0.5;
-font-size:13px;
 }
 
-/* MOBILE */
+/* FLOAT BUTTON */
+.float-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:12px 18px;
+border-radius:50px;
+text-decoration:none;
+box-shadow:0 5px 20px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.float-btn:hover{
+transform:scale(1.1);
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 @media(max-width:768px){
 .hero h1{font-size:26px;}
-.compare{grid-template-columns:1fr;}
 }
 
 </style>
@@ -187,44 +228,31 @@ font-size:13px;
 
 <!-- WORK -->
 <section class="section">
+
+<h2 class="section-title">10+ High CTR Thumbnails 🔥</h2>
+<p class="section-sub">Designed to increase clicks and engagement</p>
+
 <div class="grid">
 
-<!-- 10 CARDS -->
-
-<div class="card">
-<div class="compare">
-<div><img src="images/before1.jpg"><div class="label">Before</div></div>
-<div><img src="images/thumb1.jpg"><div class="label">After</div></div>
-</div>
-<div class="result">2K → 25K 🚀</div>
-</div>
-
-<div class="card">
-<div class="compare">
-<div><img src="images/before2.jpg"><div class="label">Before</div></div>
-<div><img src="images/thumb2.jpg"><div class="label">After</div></div>
-</div>
-<div class="result">5K → 40K 🔥</div>
-</div>
-
-<div class="card">
-<div class="compare">
-<div><img src="images/before3.jpg"><div class="label">Before</div></div>
-<div><img src="images/thumb3.jpg"><div class="label">After</div></div>
-</div>
-<div class="result">1K → 18K 🚀</div>
-</div>
-
-<!-- duplicate -->
-<div class="card"><div class="compare"><div><img src="images/before1.jpg"></div><div><img src="images/thumb1.jpg"></div></div><div class="result">2K → 25K</div></div>
-<div class="card"><div class="compare"><div><img src="images/before2.jpg"></div><div><img src="images/thumb2.jpg"></div></div><div class="result">5K → 40K</div></div>
-<div class="card"><div class="compare"><div><img src="images/before3.jpg"></div><div><img src="images/thumb3.jpg"></div></div><div class="result">1K → 18K</div></div>
-<div class="card"><div class="compare"><div><img src="images/before1.jpg"></div><div><img src="images/thumb1.jpg"></div></div><div class="result">2K → 25K</div></div>
-<div class="card"><div class="compare"><div><img src="images/before2.jpg"></div><div><img src="images/thumb2.jpg"></div></div><div class="result">5K → 40K</div></div>
-<div class="card"><div class="compare"><div><img src="images/before3.jpg"></div><div><img src="images/thumb3.jpg"></div></div><div class="result">1K → 18K</div></div>
-<div class="card"><div class="compare"><div><img src="images/before1.jpg"></div><div><img src="images/thumb1.jpg"></div></div><div class="result">2K → 25K</div></div>
+<div class="card"><img src="images/thumb1.jpg"><div class="result">High CTR 🚀</div></div>
+<div class="card"><img src="images/thumb2.jpg"><div class="result">Viral Style 🔥</div></div>
+<div class="card"><img src="images/thumb3.jpg"><div class="result">Gaming 🎮</div></div>
+<div class="card"><img src="images/thumb4.jpg"><div class="result">AI 🤖</div></div>
+<div class="card"><img src="images/thumb5.jpg"><div class="result">Trading 📈</div></div>
+<div class="card"><img src="images/thumb6.jpg"><div class="result">YouTube 🎯</div></div>
+<div class="card"><img src="images/thumb7.jpg"><div class="result">Modern 💯</div></div>
+<div class="card"><img src="images/thumb8.jpg"><div class="result">Click Boost ⚡</div></div>
+<div class="card"><img src="images/thumb9.jpg"><div class="result">Pro Design 🧠</div></div>
+<div class="card"><img src="images/thumb10.jpg"><div class="result">High Performance 🔥</div></div>
 
 </div>
+
+<div class="center-cta">
+<a href="https://wa.me/919083946648" class="cta">
+Get Your Free Thumbnail 🚀
+</a>
+</div>
+
 </section>
 
 <!-- REVIEWS -->
@@ -244,6 +272,9 @@ font-size:13px;
 <footer>
 Made with ❤️ by Soham ★
 </footer>
+
+<!-- FLOAT BUTTON -->
+<a href="https://wa.me/919083946648" class="float-btn">Chat</a>
 
 </body>
 </html>
