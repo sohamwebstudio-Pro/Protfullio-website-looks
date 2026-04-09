@@ -108,7 +108,7 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:16px;
 }
 
-/* CARD (FINAL FIX 🔥) */
+/* CARD */
 .card{
 background:#121826;
 border-radius:14px;
@@ -135,7 +135,6 @@ transform:scale(1.05);
 transform:scale(0.96);
 }
 
-/* TEXT */
 .result{
 padding:10px;
 text-align:center;
@@ -179,6 +178,114 @@ opacity:0.6;
 font-size:14px;
 }
 
+/* 🤖 ROBOT CSS */
+.robot-wrap{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:9999;
+}
+
+.robot{
+width:70px;
+height:95px;
+position:relative;
+cursor:pointer;
+animation:float 3s ease-in-out infinite;
+}
+
+.robot-head{
+width:58px;
+height:42px;
+background:linear-gradient(145deg,#1f2937,#0f172a);
+border-radius:10px;
+margin:auto;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:6px;
+}
+
+.eye{
+width:8px;
+height:8px;
+background:#00e5ff;
+border-radius:50%;
+box-shadow:0 0 8px #00e5ff;
+animation:blink 4s infinite;
+}
+
+.robot-body{
+width:45px;
+height:36px;
+background:#111827;
+margin:5px auto;
+border-radius:8px;
+}
+
+.arm{
+width:8px;
+height:26px;
+background:#1e293b;
+position:absolute;
+top:48px;
+border-radius:10px;
+}
+
+.arm.left{left:2px;}
+.arm.right{right:2px; transform-origin:top;}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-5px);}
+}
+
+@keyframes blink{
+0%,90%,100%{transform:scaleY(1);}
+95%{transform:scaleY(0.1);}
+}
+
+.wave{
+animation:wave 0.6s ease;
+}
+
+@keyframes wave{
+0%{transform:rotate(0deg);}
+50%{transform:rotate(-25deg);}
+100%{transform:rotate(0deg);}
+}
+
+.robot-chat{
+position:absolute;
+bottom:105px;
+right:0;
+width:240px;
+background:#0f172a;
+border-radius:12px;
+padding:12px;
+display:none;
+}
+
+.option{
+background:#1e293b;
+padding:7px;
+border-radius:7px;
+margin-bottom:5px;
+cursor:pointer;
+}
+
+.robot-msg{
+position:absolute;
+bottom:110px;
+right:0;
+background:#2563eb;
+padding:7px 10px;
+border-radius:8px;
+font-size:12px;
+display:none;
+transition:0.3s;
+}
+
 </style>
 </head>
 
@@ -186,92 +293,100 @@ font-size:14px;
 
 <!-- HERO -->
 <section class="hero">
-
-<h1>
-Get more <span class="highlight-red">clicks</span>
-</h1>
-
+<h1>Get more <span class="highlight-red">clicks</span></h1>
 <p>Thumbnails that make people STOP & CLICK 🚀</p>
 
 <a href="https://wa.me/919083946648?text=Hey%20I%20want%20a%20FREE%20thumbnail" class="cta">
 Get 1 FREE Thumbnail
 </a>
-
-<div class="socials">
-
-<a href="https://wa.me/919083946648?text=Hey%20I%20want%20a%20FREE%20thumbnail" class="social-btn">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="16">
-WhatsApp
-</a>
-
-<a href="https://www.instagram.com/ind_web_studio?igsh=aHFsNTFnYWFsMm0y" target="_blank" class="social-btn">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="16">
-Instagram
-</a>
-
-</div>
-
 </section>
 
 <!-- PORTFOLIO -->
 <section class="section">
 <h2 class="section-title">High CTR Thumbnails 🔥</h2>
-<p class="section-sub">Designed for clicks & engagement</p>
-
 <div class="grid">
-
-<div class="card"><img src="thumb1.png"><div class="result">Animie ⚡</div></div>
+<div class="card"><img src="thumb1.png"><div class="result">Anime ⚡</div></div>
 <div class="card"><img src="thumb2.png"><div class="result">Psychology 🧠</div></div>
 <div class="card"><img src="thumb3.png"><div class="result">AI 🤖</div></div>
 <div class="card"><img src="thumb4.png"><div class="result">CTR Boost 🔥</div></div>
 <div class="card"><img src="thumb5.png"><div class="result">Fitness 💪</div></div>
 <div class="card"><img src="thumb6.png"><div class="result">Story 🎤</div></div>
-
 </div>
-
-<div style="text-align:center; margin-top:20px;">
-<a href="https://wa.me/919083946648?text=Hey%20I%20want%20a%20FREE%20thumbnail" class="cta">
-Get Your Free Thumbnail Now 🚀
-</a>
-</div>
-
 </section>
 
-<!-- WHY -->
-<section class="section">
-<h2 class="section-title">Why Choose Me?</h2>
+<footer>Made with ❤️ by Soham</footer>
 
-<div class="grid">
-<div class="why-box">⚡ Fast Delivery (24h)</div>
-<div class="why-box">🎯 CTR Focused Design</div>
-<div class="why-box">💬 Free Sample First</div>
+<!-- 🤖 ROBOT HTML -->
+<div class="robot-wrap">
+
+<div class="robot-msg" id="robotMsg"></div>
+
+<div class="robot-chat" id="robotChat">
+<p>Need help?</p>
+<div class="option" onclick="botReply('price')">Price?</div>
+<div class="option" onclick="botReply('time')">Delivery?</div>
+<div class="option" onclick="botReply('sample')">Free sample?</div>
+<div class="option" onclick="botReply('custom')">Ask more</div>
+<p id="botReplyText"></p>
 </div>
 
-</section>
-
-<!-- REVIEWS -->
-<section class="section">
-
-<div class="review">
-<span class="stars">★★★★★</span>
-<p>Better clicks after redesign</p>
+<div class="robot" onclick="toggleRobot()">
+<div class="robot-head">
+<div class="eye"></div>
+<div class="eye"></div>
+</div>
+<div class="arm left"></div>
+<div class="arm right" id="arm"></div>
+<div class="robot-body"></div>
 </div>
 
-<div class="review">
-<span class="stars">★★★★★</span>
-<p>Clean & eye-catching</p>
 </div>
 
-<div class="review">
-<span class="stars">★★★★★</span>
-<p>Fast & easy communication</p>
-</div>
+<script>
 
-</section>
+function toggleRobot(){
+let box=document.getElementById("robotChat");
+box.style.display = box.style.display==="block" ? "none":"block";
+}
 
-<footer>
-Made with ❤️ by Soham
-</footer>
+function wave(){
+let arm=document.getElementById("arm");
+arm.classList.add("wave");
+setTimeout(()=>arm.classList.remove("wave"),600);
+}
+
+const messages=["Hey creator","Use me","Need help?"];
+let index=0;
+
+function showMessage(){
+let msg=document.getElementById("robotMsg");
+
+msg.innerText=messages[index];
+msg.style.display="block";
+wave();
+
+setTimeout(()=>{
+msg.style.display="none";
+index=(index+1)%messages.length;
+setTimeout(showMessage,2000);
+},5500);
+}
+
+showMessage();
+
+function botReply(type){
+let text="";
+if(type==="price") text="Starts from ₹100";
+else if(type==="time") text="Delivery in 24h";
+else if(type==="sample") text="1 FREE sample available";
+else{
+window.open("https://wa.me/919083946648?text=Hey%20I%20have%20a%20question");
+return;
+}
+document.getElementById("botReplyText").innerText=text;
+}
+
+</script>
 
 </body>
 </html>
