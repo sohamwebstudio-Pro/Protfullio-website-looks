@@ -4,13 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Soham Studio</title>
+<title>Soham Thumbnail Studio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET */
 *{
 margin:0;
 padding:0;
@@ -22,26 +21,22 @@ body{
 font-family:Poppins;
 background:#0b0f1a;
 color:white;
-overflow-x:hidden;
 }
 
 /* HERO */
 .hero{
-padding:80px 20px 50px;
+padding:60px 20px 30px;
 text-align:center;
-max-width:900px;
-margin:auto;
-animation:fadeUp 1s ease;
 }
 
 .hero h1{
-font-size:38px;
+font-size:34px;
+line-height:1.2;
 }
 
-.highlight{
-background:linear-gradient(45deg,#6c5cff,#00c6ff);
--webkit-background-clip:text;
-color:transparent;
+.highlight-red{
+color:#ff3b3b;
+font-weight:700;
 }
 
 .hero p{
@@ -49,164 +44,139 @@ margin-top:10px;
 opacity:0.7;
 }
 
+/* CTA */
 .cta{
-margin-top:20px;
-padding:14px 30px;
+margin-top:18px;
+padding:12px 28px;
 border-radius:40px;
-background:linear-gradient(45deg,#ff4d4d,#ff2d2d);
+background:#ff3b3b;
 color:white;
 text-decoration:none;
 display:inline-block;
-transition:0.3s;
+font-weight:500;
 }
 
-.cta:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 25px rgba(255,0,0,0.4);
+/* SOCIAL */
+.socials{
+margin-top:12px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.social-btn{
+display:flex;
+align-items:center;
+gap:6px;
+background:#121826;
+padding:8px 14px;
+border-radius:25px;
+text-decoration:none;
+color:white;
+font-size:13px;
+transition:0.2s;
+}
+
+.social-btn:hover{
+background:#1a2235;
 }
 
 /* SECTION */
 .section{
-padding:60px 20px;
+padding:40px 20px;
 max-width:1100px;
 margin:auto;
 }
 
 .section-title{
 text-align:center;
-font-size:26px;
+font-size:24px;
+margin-bottom:8px;
 }
 
 .section-sub{
 text-align:center;
 opacity:0.6;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 /* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:22px;
+gap:16px;
 }
 
-/* CARD */
+/* CARD (FINAL FIX 🔥) */
 .card{
 background:#121826;
-border-radius:18px;
+border-radius:14px;
 overflow:hidden;
-transition:0.3s;
+transition:0.25s ease;
 cursor:pointer;
-position:relative;
-user-select:none;
-}
-
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 20px 40px rgba(0,0,0,0.7),
-0 0 30px rgba(108,92,255,0.5);
-}
-
-.card:active{
-transform:scale(0.95);
 }
 
 .card img{
 width:100%;
-display:block;
-transition:0.4s;
-}
-
-.card:hover img{
-transform:scale(1.08);
-}
-
-.card::before{
-content:"";
-position:absolute;
-inset:0;
-border-radius:18px;
-background:linear-gradient(120deg,transparent,#6c5cff,transparent);
-opacity:0;
 transition:0.3s;
 }
 
-.card:hover::before{
-opacity:0.25;
+.card:hover{
+transform:translateY(-6px) scale(1.02);
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
+.card:hover img{
+transform:scale(1.05);
+}
+
+.card:active{
+transform:scale(0.96);
+}
+
+/* TEXT */
 .result{
-padding:12px;
+padding:10px;
 text-align:center;
 color:#00c6ff;
 }
 
-/* CTA CENTER */
-.center-cta{
-text-align:center;
-margin-top:40px;
-}
-
-/* REVIEWS */
-.review{
+/* WHY */
+.why-box{
 background:#121826;
 padding:14px;
 border-radius:12px;
-margin-bottom:10px;
-}
-
-/* TRUST */
-.trust{
 text-align:center;
-padding:30px;
+font-size:14px;
 }
 
-.badge{
-display:inline-block;
+/* REVIEW */
+.review{
 background:#121826;
-padding:8px 16px;
-border-radius:25px;
-margin:6px;
+padding:12px;
+border-radius:12px;
+margin-bottom:8px;
+display:flex;
+gap:8px;
+align-items:center;
+}
+
+.review p{
+font-size:14px;
+}
+
+.stars{
+color:#ffd700;
+min-width:85px;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
-padding:25px;
-opacity:0.5;
-}
-
-/* FLOAT BUTTON */
-.float-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:12px 18px;
-border-radius:50px;
-text-decoration:none;
-box-shadow:0 5px 20px rgba(0,0,0,0.5);
-transition:0.3s;
-}
-
-.float-btn:hover{
-transform:scale(1.1);
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@media(max-width:768px){
-.hero h1{font-size:26px;}
+padding:15px;
+opacity:0.6;
+font-size:14px;
 }
 
 </style>
@@ -214,57 +184,94 @@ transform:translateY(0);
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
-<h1>High CTR <span class="highlight">Thumbnail Design</span></h1>
-<p>Designed to increase clicks. Proven by results.</p>
-<a href="https://wa.me/919083946648" class="cta">Get Free Sample</a>
-</section>
 
-<section class="section">
+<h1>
+Get more <span class="highlight-red">clicks</span>
+</h1>
 
-<h2 class="section-title">10+ High CTR Thumbnails 🔥</h2>
-<p class="section-sub">Designed to increase clicks and engagement</p>
+<p>Thumbnails that make people STOP & CLICK 🚀</p>
 
-<div class="grid">
+<a href="https://wa.me/919083946648?text=Hey%20I%20want%20a%20FREE%20thumbnail" class="cta">
+Get 1 FREE Thumbnail
+</a>
 
-<div class="card"><img src="thumb1.png"><div class="result">Animie 🚀</div></div>
-<div class="card"><img src="thumb2.png"><div class="result">psychology 🔥</div></div>
-<div class="card"><img src="thumb3.png"><div class="result">AI Secrets 🤖</div></div>
-<div class="card"><img src="thumb4.png"><div class="result">Game 🎮</div></div>
-<div class="card"><img src="thumb5.png"><div class="result">Trading 📈</div></div>
-<div class="card"><img src="thumb6.png"><div class="result">Story taleing ⚡</div></div>
-<div class="card"><img src="thumb7.png"><div class="result">Fitness 💯</div></div>
-<div class="card"><img src="thumb8.png"><div class="result">Body transform 💪</div></div>
-<div class="card"><img src="thumb9.png"><div class="result">Pro Earn tips 🧠</div></div>
-<div class="card"><img src="thumb10.png"><div class="result">Instent glowup ✨</div></div>
+<div class="socials">
+
+<a href="https://wa.me/919083946648?text=Hey%20I%20want%20a%20FREE%20thumbnail" class="social-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="16">
+WhatsApp
+</a>
+
+<a href="https://www.instagram.com/ind_web_studio?igsh=aHFsNTFnYWFsMm0y" target="_blank" class="social-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="16">
+Instagram
+</a>
 
 </div>
 
-<div class="center-cta">
-<a href="https://wa.me/919083946648" class="cta">
-Get Your Free Thumbnail 🚀
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section">
+<h2 class="section-title">High CTR Thumbnails 🔥</h2>
+<p class="section-sub">Designed for clicks & engagement</p>
+
+<div class="grid">
+
+<div class="card"><img src="thumb1.png"><div class="result">Gaming 🎮</div></div>
+<div class="card"><img src="thumb2.png"><div class="result">Psychology 🧠</div></div>
+<div class="card"><img src="thumb3.png"><div class="result">AI 🤖</div></div>
+<div class="card"><img src="thumb4.png"><div class="result">Story ⚡</div></div>
+<div class="card"><img src="thumb5.png"><div class="result">Fitness 💪</div></div>
+<div class="card"><img src="thumb6.png"><div class="result">Finance 📈</div></div>
+
+</div>
+
+<div style="text-align:center; margin-top:20px;">
+<a href="https://wa.me/919083946648?text=Hey%20I%20want%20a%20FREE%20thumbnail" class="cta">
+Get Your Free Thumbnail Now 🚀
 </a>
 </div>
 
 </section>
 
+<!-- WHY -->
 <section class="section">
-<div class="review">★★★★★ CTR increased instantly 🔥</div>
-<div class="review">★★★★★ Clean and professional</div>
-<div class="review">★★★★★ Highly recommended</div>
+<h2 class="section-title">Why Choose Me?</h2>
+
+<div class="grid">
+<div class="why-box">⚡ Fast Delivery (24h)</div>
+<div class="why-box">🎯 CTR Focused Design</div>
+<div class="why-box">💬 Free Sample First</div>
+</div>
+
 </section>
 
-<section class="trust">
-<div class="badge">⚡ Fast Delivery</div>
-<div class="badge">🎯 High CTR Focus</div>
-<div class="badge">💬 Free Sample</div>
+<!-- REVIEWS -->
+<section class="section">
+
+<div class="review">
+<span class="stars">★★★★★</span>
+<p>Better clicks after redesign</p>
+</div>
+
+<div class="review">
+<span class="stars">★★★★★</span>
+<p>Clean & eye-catching</p>
+</div>
+
+<div class="review">
+<span class="stars">★★★★★</span>
+<p>Fast & easy communication</p>
+</div>
+
 </section>
 
 <footer>
-Made with ❤️ by Soham ★
+Made with ❤️ by Soham
 </footer>
-
-<a href="https://wa.me/919083946648" class="float-btn">Chat</a>
 
 </body>
 </html>
