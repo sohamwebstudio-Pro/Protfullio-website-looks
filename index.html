@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>Soham Thumbnail Studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,276 +14,360 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
--webkit-tap-highlight-color: transparent;
+-webkit-tap-highlight-color:transparent;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:Poppins;
-background:#0b0f1a;
+font-family:'Poppins',sans-serif;
+background:
+radial-gradient(circle at top,#162033 0%,#0b0f1a 45%);
 color:white;
+overflow-x:hidden;
 }
 
-/* HERO */
-.hero{
-padding:60px 20px 30px;
-text-align:center;
+img{
+max-width:100%;
+display:block;
 }
 
-.hero h1{
-font-size:34px;
-line-height:1.2;
-}
+/* ===== CONTAINER ===== */
 
-.highlight-red{
-color:#ff3b3b;
-font-weight:700;
-}
-
-.hero p{
-margin-top:10px;
-opacity:0.7;
-}
-
-/* CTA */
-.cta{
-margin-top:18px;
-padding:12px 28px;
-border-radius:40px;
-background:#ff3b3b;
-color:white;
-text-decoration:none;
-display:inline-block;
-font-weight:500;
-}
-
-/* SOCIAL */
-.socials{
-margin-top:12px;
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.social-btn{
-display:flex;
-align-items:center;
-gap:6px;
-background:#121826;
-padding:8px 14px;
-border-radius:25px;
-text-decoration:none;
-color:white;
-font-size:13px;
-transition:0.2s;
-}
-
-.social-btn:hover{
-background:#1a2235;
-}
-
-/* SECTION */
-.section{
-padding:40px 20px;
-max-width:1100px;
+.container{
+width:min(1150px,92%);
 margin:auto;
 }
 
-.section-title{
+/* ===== HERO ===== */
+
+.hero{
+padding:75px 0 45px;
 text-align:center;
-font-size:24px;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:300px;
+height:300px;
+background:#ff3b3b22;
+filter:blur(120px);
+top:-120px;
+left:50%;
+transform:translateX(-50%);
+z-index:-1;
+}
+
+.hero-badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:9px 18px;
+border:1px solid rgba(255,255,255,.08);
+border-radius:50px;
+background:rgba(255,255,255,.04);
+font-size:13px;
+margin-bottom:20px;
+color:#dbeafe;
+backdrop-filter:blur(10px);
+}
+
+.hero h1{
+font-size:clamp(40px,7vw,74px);
+line-height:1.05;
+font-weight:700;
+letter-spacing:-1px;
+max-width:920px;
+margin:auto;
+}
+
+.highlight-red{
+color:#ff4b4b;
+}
+
+.hero p{
+margin-top:18px;
+font-size:16px;
+line-height:1.8;
+opacity:.72;
+max-width:680px;
+margin-inline:auto;
+}
+
+/* ===== BUTTONS ===== */
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:28px;
+flex-wrap:wrap;
+}
+
+.cta{
+padding:14px 28px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.25s ease;
+font-size:14px;
+}
+
+.primary-btn{
+background:#ff3b3b;
+color:white;
+box-shadow:0 10px 30px rgba(255,59,59,.22);
+}
+
+.primary-btn:hover{
+transform:translateY(-3px);
+}
+
+.secondary-btn{
+background:rgba(255,255,255,.03);
+color:white;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.secondary-btn:hover{
+background:rgba(255,255,255,.06);
+transform:translateY(-3px);
+}
+
+/* ===== STATS ===== */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.stats div{
+background:#121826;
+padding:10px 16px;
+border-radius:14px;
+font-size:13px;
+border:1px solid rgba(255,255,255,.05);
+color:#dbeafe;
+}
+
+/* ===== SECTION ===== */
+
+.section{
+padding:55px 0;
+}
+
+.section-title{
+font-size:34px;
+text-align:center;
 margin-bottom:8px;
 }
 
 .section-sub{
 text-align:center;
-opacity:0.6;
-margin-bottom:25px;
+opacity:.65;
+max-width:700px;
+margin:0 auto 32px;
+line-height:1.7;
+font-size:15px;
 }
 
-/* GRID */
+/* ===== GRID ===== */
+
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:16px;
+gap:18px;
 }
 
-/* CARD */
+/* ===== CARD ===== */
+
 .card{
 background:#121826;
-border-radius:14px;
+border-radius:20px;
 overflow:hidden;
-transition:0.25s ease;
-cursor:pointer;
-}
-
-.card img{
-width:100%;
-transition:0.3s;
+transition:.3s ease;
+border:1px solid rgba(255,255,255,.05);
 }
 
 .card:hover{
-transform:translateY(-6px) scale(1.02);
-box-shadow:0 10px 25px rgba(0,0,0,0.5);
+transform:translateY(-7px);
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.card img{
+transition:.45s ease;
+aspect-ratio:16/9;
+object-fit:cover;
 }
 
 .card:hover img{
-transform:scale(1.05);
-}
-
-.card:active{
-transform:scale(0.96);
+transform:scale(1.04);
 }
 
 .result{
-padding:10px;
-text-align:center;
-color:#00c6ff;
+padding:15px;
+font-size:14px;
+font-weight:500;
+color:#dbeafe;
 }
 
-/* WHY */
+/* ===== WHY CHOOSE ===== */
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:18px;
+}
+
 .why-box{
 background:#121826;
-padding:14px;
-border-radius:12px;
+padding:24px 20px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.05);
+transition:.3s ease;
 text-align:center;
+}
+
+.why-box:hover{
+transform:translateY(-5px);
+}
+
+.why-icon{
+font-size:30px;
+margin-bottom:12px;
+}
+
+.why-box h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.why-box p{
+opacity:.7;
+line-height:1.7;
 font-size:14px;
 }
 
-/* REVIEW */
+/* ===== REVIEW ===== */
+
+.review-wrap{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:18px;
+}
+
 .review{
 background:#121826;
-padding:12px;
-border-radius:12px;
-margin-bottom:8px;
-display:flex;
-gap:8px;
-align-items:center;
-}
-
-.review p{
-font-size:14px;
+padding:22px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.05);
 }
 
 .stars{
 color:#ffd700;
-min-width:85px;
+margin-bottom:10px;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:15px;
-opacity:0.6;
+.review p{
+font-size:14px;
+line-height:1.8;
+opacity:.78;
+}
+
+.review h4{
+margin-top:14px;
 font-size:14px;
 }
 
-/* 🤖 ROBOT CSS */
-.robot-wrap{
-position:fixed;
-bottom:20px;
-right:20px;
-z-index:9999;
+/* ===== CTA BANNER ===== */
+
+.cta-banner{
+margin-top:35px;
+padding:42px 24px;
+background:linear-gradient(135deg,#ff3b3b,#ff6b6b);
+border-radius:28px;
+text-align:center;
 }
 
-.robot{
-width:70px;
-height:95px;
-position:relative;
-cursor:pointer;
-animation:float 3s ease-in-out infinite;
+.cta-banner h2{
+font-size:34px;
+line-height:1.2;
 }
 
-.robot-head{
-width:58px;
-height:42px;
-background:linear-gradient(145deg,#1f2937,#0f172a);
-border-radius:10px;
-margin:auto;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:6px;
+.cta-banner p{
+margin-top:12px;
+line-height:1.7;
+opacity:.92;
+max-width:620px;
+margin-inline:auto;
 }
 
-.eye{
-width:8px;
-height:8px;
-background:#00e5ff;
-border-radius:50%;
-box-shadow:0 0 8px #00e5ff;
-animation:blink 4s infinite;
+.banner-btn{
+display:inline-block;
+margin-top:24px;
+padding:14px 28px;
+background:white;
+color:#111827;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+transition:.25s;
 }
 
-.robot-body{
-width:45px;
-height:36px;
-background:#111827;
-margin:5px auto;
-border-radius:8px;
+.banner-btn:hover{
+transform:translateY(-3px);
 }
 
-.arm{
-width:8px;
-height:26px;
-background:#1e293b;
-position:absolute;
-top:48px;
-border-radius:10px;
+/* ===== FOOTER ===== */
+
+footer{
+padding:22px 0 28px;
+text-align:center;
+font-size:13px;
+opacity:.5;
 }
 
-.arm.left{left:2px;}
-.arm.right{right:2px; transform-origin:top;}
+/* ===== MOBILE ===== */
 
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-5px);}
+@media(max-width:768px){
+
+.hero{
+padding-top:60px;
+padding-bottom:35px;
 }
 
-@keyframes blink{
-0%,90%,100%{transform:scaleY(1);}
-95%{transform:scaleY(0.1);}
+.hero h1{
+line-height:1.1;
 }
 
-.wave{
-animation:wave 0.6s ease;
+.hero p{
+font-size:15px;
 }
 
-@keyframes wave{
-0%{transform:rotate(0deg);}
-50%{transform:rotate(-25deg);}
-100%{transform:rotate(0deg);}
+.section{
+padding:45px 0;
 }
 
-.robot-chat{
-position:absolute;
-bottom:105px;
-right:0;
-width:240px;
-background:#0f172a;
-border-radius:12px;
-padding:12px;
-display:none;
+.section-title{
+font-size:28px;
 }
 
-.option{
-background:#1e293b;
-padding:7px;
-border-radius:7px;
-margin-bottom:5px;
-cursor:pointer;
+.stats{
+gap:10px;
 }
 
-.robot-msg{
-position:absolute;
-bottom:110px;
-right:0;
-background:#2563eb;
-padding:7px 10px;
-border-radius:8px;
+.stats div{
 font-size:12px;
-display:none;
-transition:0.3s;
+}
+
+.cta-banner h2{
+font-size:28px;
+}
+
 }
 
 </style>
@@ -292,28 +376,209 @@ transition:0.3s;
 <body>
 
 <!-- HERO -->
+
 <section class="hero">
-<h1>Get more <span class="highlight-red">clicks</span></h1>
-<p>Thumbnails that make people STOP & CLICK 🚀</p>
+<div class="container">
 
-<a href="https://wa.me/919083946648?text=Hey%20I%20want%20a%20FREE%20thumbnail" class="cta">
-Get 1 FREE Thumbnail
+<div class="hero-badge">
+🚀 Modern Creator Visuals
+</div>
+
+<h1>
+Professional <span class="highlight-red">YouTube Thumbnails</span>
+That Instantly Grab Attention
+</h1>
+
+<p>
+Modern thumbnail design for gaming, AI, psychology,
+storytelling and viral creator content.
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://wa.me/919083946648"
+class="cta primary-btn">
+Get Thumbnail
 </a>
-</section>
 
-<!-- PORTFOLIO -->
-<section class="section">
-<h2 class="section-title">High CTR Thumbnails 🔥</h2>
-<div class="grid">
-<div class="card"><img src="thumb1.png"><div class="result">Anime ⚡</div></div>
-<div class="card"><img src="thumb2.png"><div class="result">Psychology 🧠</div></div>
-<div class="card"><img src="thumb3.png"><div class="result">AI 🤖</div></div>
-<div class="card"><img src="thumb4.png"><div class="result">CTR Boost 🔥</div></div>
-<div class="card"><img src="thumb5.png"><div class="result">Fitness 💪</div></div>
-<div class="card"><img src="thumb6.png"><div class="result">Story 🎤</div></div>
+<a href="#portfolio"
+class="cta secondary-btn">
+View Work
+</a>
+
+</div>
+
+<div class="stats">
+<div>50+ Designs</div>
+<div>Fast Delivery</div>
+<div>High CTR Style</div>
+<div>Mobile Optimized</div>
+</div>
+
 </div>
 </section>
 
-<footer>Made with ❤️ by Soham</footer>
+<!-- PORTFOLIO -->
+
+<section class="section" id="portfolio">
+<div class="container">
+
+<h2 class="section-title">
+Featured Work
+</h2>
+
+<p class="section-sub">
+Thumbnail visuals designed to improve clicks,
+attention and creator branding.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<img src="thumb1.png" alt="thumbnail">
+<div class="result">Anime Thumbnail ⚡</div>
+</div>
+
+<div class="card">
+<img src="thumb2.png" alt="thumbnail">
+<div class="result">Psychology Content 🧠</div>
+</div>
+
+<div class="card">
+<img src="thumb3.png" alt="thumbnail">
+<div class="result">AI / Tech Visual 🤖</div>
+</div>
+
+<div class="card">
+<img src="thumb4.png" alt="thumbnail">
+<div class="result">High CTR Design 🔥</div>
+</div>
+
+<div class="card">
+<img src="thumb5.png" alt="thumbnail">
+<div class="result">Fitness Creator 💪</div>
+</div>
+
+<div class="card">
+<img src="thumb6.png" alt="thumbnail">
+<div class="result">Storytelling Video 🎤</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- WHY -->
+
+<section class="section">
+<div class="container">
+
+<h2 class="section-title">
+Why Choose Me?
+</h2>
+
+<p class="section-sub">
+Focused on attention psychology, modern aesthetics
+and creator-focused visuals.
+</p>
+
+<div class="why-grid">
+
+<div class="why-box">
+<div class="why-icon">🎯</div>
+<h3>High CTR Focus</h3>
+<p>
+Designed to improve clicks and audience attention.
+</p>
+</div>
+
+<div class="why-box">
+<div class="why-icon">⚡</div>
+<h3>Fast Delivery</h3>
+<p>
+Quick workflow and smooth creator communication.
+</p>
+</div>
+
+<div class="why-box">
+<div class="why-icon">🎨</div>
+<h3>Modern Style</h3>
+<p>
+Premium aesthetic with clean and engaging visuals.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- REVIEWS -->
+
+<section class="section">
+<div class="container">
+
+<h2 class="section-title">
+Client Feedback
+</h2>
+
+<p class="section-sub">
+Creators appreciate the clean visual style and
+attention-focused thumbnail design.
+</p>
+
+<div class="review-wrap">
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+"Thumbnail quality looked very professional and matched my content perfectly."
+</p>
+<h4>— Gaming Creator</h4>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+"Fast delivery and modern editing style. Really improved my channel branding."
+</p>
+<h4>— Motivation Page</h4>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+"Very good understanding of attention and thumbnail psychology."
+</p>
+<h4>— AI Creator</h4>
+</div>
+
+</div>
+
+<div class="cta-banner">
+
+<h2>
+Need Better Thumbnails?
+</h2>
+
+<p>
+Let's create thumbnails that make people stop scrolling and click.
+</p>
+
+<a href="https://wa.me/919083946648"
+class="banner-btn">
+Contact Now
+</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Soham Thumbnail Studio — All Rights Reserved
+</footer>
+
 </body>
 </html>
